@@ -16,7 +16,7 @@ header {
   justify-content: space-between;
   align-items: center;
   height: 80px;
-  padding: 0 2rem;
+  padding: 0 1rem 0 2rem;
   background-color: var(--mainColor);
   color: var(--textColor);
 }
@@ -24,6 +24,22 @@ header {
 header a {
   text-decoration: none;
   color: var(--textColor);
+}
+
+nav .sign-in-phone {
+  visibility: hidden;
+  opacity: 0;
+  display: none;
+}
+
+header .sign-in {
+  color: var(--textColor);
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+header .sign-in:hover {
+  color: var(--secondaryColor);
 }
 
 nav a {
@@ -51,12 +67,15 @@ header .nav-btn {
   outline: none;
   visibility: hidden;
   opacity: 0;
+  display: none;
 }
+
 
 @media only screen and (max-width: 1024px) {
   header .nav-btn {
     visibility: visible;
     opacity: 1;
+    display: block;
   }
 
   header nav {
@@ -88,5 +107,31 @@ header .nav-btn {
 
   nav a {
     font-size: 1.5rem;
+  }
+
+  nav .sign-in-phone {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 45px;
+    border-radius: 8px;
+    background-color: var(--textColor);
+    color: var(--mainColor);
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    visibility: visible;
+    opacity: 1;
+    width: 70%;
+  }
+
+  nav .sign-in-phone:hover {
+    background-color: var(--mainColorLight);
+  }
+
+  header .sign-in {
+    visibility: hidden;
+    opacity: 0;
+    display: none;
   }
 }

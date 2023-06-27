@@ -1,13 +1,15 @@
-import logo from './logo.svg';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import { Routes, Route } from 'react-router-dom';
-
+import LoginForm from './components/forms/LoginForm';
 import Home from './components/home/Home';
+import RegisterForm from './components/forms/RegisterForm';
 
 function App() {
   return (
     <Routes>
-      <Route path='/' element={<Home/>} />
+      <Route path="/" element={<Home />} />
+      <Route path="/login" element={<LoginForm />} />
+      <Route path="/register" element={<RegisterForm />} />
     </Routes>
   );
 }

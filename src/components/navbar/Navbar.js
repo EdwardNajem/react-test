@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
-import { NavLink, Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import '../navbar/navbar.css';
 
 function Navbar() {
@@ -16,6 +16,10 @@ function Navbar() {
         <h1>Logo</h1>
       </Link>
       <nav ref={navRef}>
+        <NavLink className="sign-in-phone " to="/login" onClick={shownavBar}>
+          Sign In
+        </NavLink>
+        
         <NavLink to="/" onClick={shownavBar}>
           Home
         </NavLink>
@@ -26,6 +30,9 @@ function Navbar() {
       <button className="nav-btn" onClick={shownavBar}>
         <FaBars />
       </button>
+      <NavLink className="sign-in" to="/login" onClick={shownavBar}>
+        Sign In
+      </NavLink>
     </header>
   );
 }
