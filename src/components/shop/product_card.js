@@ -1,4 +1,4 @@
-const product_card = [
+export const product_card = [
   {
     id: 1,
     product_name: 'Rayes Alpha',

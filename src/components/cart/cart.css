@@ -1,0 +1,100 @@
+:root {
+  --mainColor: #29335c;
+  --mainColorLight: #47589b;
+  --secondaryColor: #db2b39;
+  --textColor: #eee;
+}
+
+.cart {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cart-header {
+  color: var(--textColor);
+  margin: 25px 0;
+}
+
+.carts {
+  width: 90%;
+}
+
+.cartItem {
+  width: 100%;
+  height: 250px;
+  display: flex;
+  margin: 20px 0;
+  align-items: center;
+  background-color: var(--mainColor);
+  border-radius: 25px;
+}
+
+.cartItem img {
+  width: 200px;
+  margin: 20px;
+}
+
+.cartItem .description {
+   margin-left: 51px;
+  width: 100%;
+  font-size: 30px;
+  color: var(--textColor);
+}
+
+.countHandler input {
+  width: 40px;
+  text-align: center;
+  font-weight: bolder;
+}
+
+.checkout button {
+  width: 150px;
+  height: 50px;
+  background-color: var(--mainColor);
+  color: var(--textColor);
+  border: none;
+  font-size: 14px;
+  border-radius: 8px;
+  margin: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.checkout button:hover {
+  background-color: var(--textColor);
+  color: var(--mainColor);
+}
+
+.countHandler .counting {
+  width: 25px;
+  height: 25px;
+  background-color: var(--textColor);
+  color: var(--mainColor);
+  border: none;
+  margin: 1px;
+  font-size: 14px;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.countHandler input {
+  width: 30px;
+  height: 26px;
+}
+
+.total {
+   color: var(--textColor);
+   font-weight: bold;
+   justify-content: center;
+   display: flex;
+   margin: 12px 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .cartItem {
+    flex-direction: column;
+    height: 380px;
+  }
+}

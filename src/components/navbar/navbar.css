@@ -42,6 +42,12 @@ header .sign-in:hover {
   color: var(--secondaryColor);
 }
 
+header .right {
+  justify-content: flex-end;
+  display: flex;
+  flex-direction: row;
+}
+
 nav a {
   color: var(--textColor);
   margin: 0 2rem;
@@ -57,6 +63,10 @@ nav a.active {
   color: var(--secondaryColor);
 }
 
+header a.active {
+  color: var(--secondaryColor)
+}
+
 header .nav-btn {
   cursor: pointer;
   background: transparent;
@@ -70,6 +80,32 @@ header .nav-btn {
   display: none;
 }
 
+nav .shop-cart-phone {
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  color: var(--textColor);
+  font-size: 1.5rem;
+  outline: none;
+  visibility: hidden;
+  opacity: 0;
+  display: none;
+}
+
+header .shop-cart {
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  color: var(--textColor);
+  font-size: 1.5rem;
+  outline: none;
+  justify-self: flex-end;
+  margin-right: 10px;
+}
+
+header .shop-cart:hover {
+  color: var(--secondaryColor);
+}
 
 @media only screen and (max-width: 1024px) {
   header .nav-btn {
@@ -129,7 +165,16 @@ header .nav-btn {
     background-color: var(--mainColorLight);
   }
 
-  header .sign-in {
+  nav .shop-cart-phone {
+    visibility: visible;
+    opacity: 1;
+    display: inline-block;
+    position: absolute;
+    top: 2.1rem;
+    right: 2.5rem;
+  }
+
+  header .right {
     visibility: hidden;
     opacity: 0;
     display: none;
