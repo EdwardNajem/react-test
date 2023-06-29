@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from '../navbar/Navbar';
 import './home.css';
+import Footer from '../footer/Footer';
 
 function Home() {
   return (
@@ -9,7 +10,7 @@ function Home() {
       <div className="home-hero">
         <div className="home-hero-info">
           <div className="home-hero-img">
-            <img src="./1.png" />
+            <img src="./1.png" alt="Headphones" />
           </div>
           <div className="home-hero-text">
             <h1>Welcome</h1>
@@ -27,10 +28,11 @@ function Home() {
           </div>
         </div>
         <div className="left-div-float">
-          <img src="2.png" />
+          <img src="2.png" alt="Headphones" />
         </div>
       </div>
       <div className="right-div"></div>
+      <Footer />
     </>
   );
 }

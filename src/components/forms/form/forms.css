@@ -70,7 +70,7 @@ select {
 }
 
 .error {
-  color: red;
+  color: var(--secondaryColor);
 }
 
 .submit-btn {

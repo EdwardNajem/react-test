@@ -19,9 +19,11 @@ function Navbar() {
         <NavLink className="sign-in-phone " to="/login" onClick={shownavBar}>
           Sign In
         </NavLink>
-        
         <NavLink to="/" onClick={shownavBar}>
           Home
+        </NavLink>
+        <NavLink to="/shop" onClick={shownavBar}>
+          Shop
         </NavLink>
         <button className="nav-btn nav-btn-close" onClick={shownavBar}>
           <FaTimes />

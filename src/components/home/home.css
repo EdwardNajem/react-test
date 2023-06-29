@@ -1,7 +1,3 @@
-body{
-   background-color: #29335c;
-}
-
 :root {
   --mainColor: #29335c;
   --mainColorLight: #47589b;
@@ -17,7 +13,7 @@ body{
   width: 100%;
   height: 560px;
   background-image: url(../../../public/hero.png);
-  background-size:auto;
+  background-size: auto;
 }
 .home-hero .home-hero-info {
   display: flex;
@@ -37,7 +33,7 @@ body{
   gap: 15px;
 }
 
- .home-hero .home-hero-info .home-hero-text h1 {
+.home-hero .home-hero-info .home-hero-text h1 {
   font-size: 29px;
 }
 
@@ -75,12 +71,12 @@ body{
   gap: 15px;
 }
 
-.left-div .left-div-text p{
-   color:var(--textColor)
+.left-div .left-div-text p {
+  color: var(--textColor);
 }
 
-.left-div .left-div-text h1{
-   color:var(--textColor)
+.left-div .left-div-text h1 {
+  color: var(--textColor);
 }
 
 .left-div .left-div-text button {
@@ -98,7 +94,26 @@ body{
 }
 
 .left-div .left-div-text button:hover {
-  background-color: var(--mainColorLight);
+  background-color: var(--mainColor);
+  color: var(--textColor);
+}
+
+@keyframes beat {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(0.9);
+  }
+  75% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 .left-div .left-div-float img {
@@ -106,6 +121,9 @@ body{
   height: 360px;
   margin-left: 30px;
   position: relative;
+  animation: beat 0.5s alternate infinite;
+  transform-origin: center center;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @media only screen and (max-width: 768px) {
@@ -123,6 +141,11 @@ body{
     margin-right: 0;
   }
 
+  .home-hero .home-hero-info .home-hero-img img {
+    width: 240px;
+    height: 240px;
+  }
+  
   .home-hero .home-hero-info .home-hero-text button {
     width: 100%;
     height: 40px;
@@ -143,6 +166,20 @@ body{
   }
 
   .left-div .left-div-float img {
+    width: 240px;
+    height: 240px;
     margin-left: 0%;
+  }
+}
+
+@keyframes beat {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
   }
 }
