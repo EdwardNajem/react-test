@@ -1,6 +1,6 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
 import './footer.css';
+import NewsForm from '../forms/NewsForm';
 
 function Footer() {
   return (
@@ -9,24 +9,47 @@ function Footer() {
         <div className="sb_footer section_padding">
           <div className="sb_footer-links">
             <div className="sb_footer-links-div">
-              <h4>Pages</h4>
-              <NavLink to="/">Home</NavLink>
-              <NavLink to="/shop">Shop</NavLink>
-              <NavLink to="/login">Login</NavLink>
-              <NavLink to="/register">Register</NavLink>
+              <h2>Made To Satisfy Your Experience</h2>
             </div>
+            <div className="sb_footer-links-div">
+              <h4>Shopping</h4>
+              <a href="/shop">
+                <p>Shop</p>
+              </a>
+              <a href="/cart">
+                <p>Shopping Cart</p>
+              </a>
+            </div>
+            <div className="sb_footer-links-div">
+              <h4>General</h4>
+              <a href="/">
+                <p>Home</p>
+              </a>
+            </div>
+            <div className="sb_footer-links-div">
+              <h4>Forms</h4>
+              <a href="/login">
+                <p>Sign In</p>
+              </a>
+              <a href="/register">
+                <p>Register</p>
+              </a>
+              <a href="/checkout">
+                <p>Checkout</p>
+              </a>
+            </div>
+            <div className="sb_footer-links-div">
+              <h4>Subscribe To Our Newsletter</h4>
+              <NewsForm />
+              </div>
           </div>
-        </div>
 
-        <hr></hr>
+          <hr></hr>
 
-        <div className="sb_footer.below">
-          <div className="sb_footer-copyright">
-            <p>&copy; {new Date().getFullYear()} All rights reserved</p>
-          </div>
-          <div className="sb_footer-below-links">
-            <a>Terms and Conditions</a>
-            <a>Services and Payment</a>
+          <div className="sb_footer.below">
+            <div className="sb_footer-copyright">
+              <p>&copy; {new Date().getFullYear()} All rights reserved</p>
+            </div>
           </div>
         </div>
       </div>

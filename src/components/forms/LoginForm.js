@@ -1,24 +1,32 @@
 import { Form, Formik } from 'formik';
-import React from 'react';
+import React, { useContext } from 'react';
 import { FaTimes } from 'react-icons/fa';
 import { NavLink, useNavigate } from 'react-router-dom';
 import * as Yup from 'yup';
+import { LoginContext } from '../context/login-context';
 import FormikControl from './Formik/FormikControl';
 import './form/forms.css';
 
 function LoginForm() {
+  const { account, SubmitLogin } = useContext(LoginContext);
   const navigate = useNavigate();
   const initialValues = {
     email: '',
     password: '',
   };
   const validationSchema = Yup.object({
-    email: Yup.string().email('Invalid email').required('Required'),
-    password: Yup.string().required('Required'),
+    email: Yup.string()
+      .email('Invalid Email Format')
+      .required('Required')
+      .matches(account.accountemail, { message: 'Username Invalid' }),
+    password: Yup.string()
+      .required('Required')
+      .matches(account.accountpassword, { message: 'Password Invalid' }),
   });
   const onSubmit = (values) => {
     console.log('Form Data: ', values);
-    navigate("/");
+    SubmitLogin(values.email, values.password);
+    navigate('/');
   };
   return (
     <>
@@ -29,11 +37,12 @@ function LoginForm() {
             onSubmit={onSubmit}
             validationSchema={validationSchema}
           >
-         
             {(formik) => {
               return (
-                <Form>
-                  <NavLink to="/"><FaTimes/></NavLink>
+                <Form className="login">
+                  <NavLink to="/">
+                    <FaTimes />
+                  </NavLink>
 
                   <h1 className="form-h1">Sign In</h1>
 

@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { LoginContext } from '../context/login-context';
+import Footer from '../footer/Footer';
 import Navbar from '../navbar/Navbar';
 import './home.css';
-import Footer from '../footer/Footer';
 
 function Home() {
+  const navigate = useNavigate();
+  const { loggedin } = useContext(LoginContext);
   return (
     <>
       <Navbar />
@@ -15,7 +19,9 @@ function Home() {
           <div className="home-hero-text">
             <h1>Welcome</h1>
             <p>Here is a selection of our greatest headphones</p>
-            <button>Explore</button>
+            <button onClick={() => navigate(loggedin ? '/shop' : '/login')}>
+              Explore
+            </button>
           </div>
         </div>
       </div>
@@ -24,7 +30,9 @@ function Home() {
           <div className="left-div-text">
             <h1>Listen To Your Needs</h1>
             <p>Here is a selection of our greatest headphones</p>
-            <button>Shop Now</button>
+            <button onClick={() => navigate(loggedin ? '/shop' : '/login')}>
+              Shop Now
+            </button>
           </div>
         </div>
         <div className="left-div-float">

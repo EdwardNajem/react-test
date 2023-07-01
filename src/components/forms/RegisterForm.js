@@ -1,11 +1,13 @@
 import { Form, Formik } from 'formik';
-import React from 'react';
+import React, { useContext } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import * as Yup from 'yup';
+import { LoginContext } from '../context/login-context';
 import FormikControl from './Formik/FormikControl';
 import './form/forms.css';
 
 function RegistrationForm() {
+  const { SubmitSignup } = useContext(LoginContext);
   const navigate = useNavigate();
   const options = [
     { key: 'Email', value: 'emailmoc' },
@@ -13,15 +15,16 @@ function RegistrationForm() {
   ];
 
   const initialValues = {
-    email: '',
+    username: '',
     password: '',
     confirmPassword: '',
     modeofContact: '',
     phone: '',
+    email: '',
   };
 
   const validationSchema = Yup.object().shape({
-    email: Yup.string().email('Invalid email format').required('Required'),
+    username: Yup.string().required('Required'),
     password: Yup.string().required('Required'),
     confirmPassword: Yup.string()
       .oneOf([Yup.ref('password'), null], 'Passwords must match')
@@ -31,11 +34,17 @@ function RegistrationForm() {
       is: 'telephonemoc',
       then: () => Yup.string().required('Required'),
     }),
+    email: Yup.string().email('Invalid email format').required('Required'),
   });
 
   const onSubmit = (values) => {
     console.log('Form Data: ', values);
-    navigate('/');
+    if (values.modeofContact === "telephonemoc") {
+    SubmitSignup(values.email, values.username, values.password, values.phone);
+    } else {
+      SubmitSignup(values.email, values.username, values.password, values.email);
+    }
+    navigate('/login');
   };
   return (
     <>
@@ -47,13 +56,19 @@ function RegistrationForm() {
         {(formik) => {
           return (
             <div className="App">
-              <Form>
+              <Form className="login">
                 <h1 className="form-h1">Sign Up</h1>
                 <FormikControl
                   control="input"
                   type="email"
                   label="Email"
                   name="email"
+                />
+                <FormikControl
+                  control="input"
+                  type="text"
+                  label="Username"
+                  name="username"
                 />
                 <FormikControl
                   control="input"
@@ -79,7 +94,12 @@ function RegistrationForm() {
                   label="Phone"
                   name="phone"
                 />
-                <button className="submit-btn" type="submit" disabled={!formik.isValid}>
+
+                <button
+                  className="submit-btn"
+                  type="submit"
+                  disabled={!formik.isValid}
+                >
                   Submit
                 </button>
                 <div className="create-account">

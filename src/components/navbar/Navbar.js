@@ -1,10 +1,12 @@
 import { ShoppingCart } from 'phosphor-react';
-import React, { useRef } from 'react';
+import React, { useContext, useRef } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { Link, NavLink } from 'react-router-dom';
+import { LoginContext } from '../context/login-context';
 import '../navbar/navbar.css';
 
 function Navbar() {
+  const { loggedin, account } = useContext(LoginContext);
   const navRef = useRef();
 
   const shownavBar = () => {
@@ -18,17 +20,23 @@ function Navbar() {
       </Link>
       <nav ref={navRef}>
         <NavLink className="sign-in-phone " to="/login" onClick={shownavBar}>
-          Sign In
+          {loggedin ? account.accountname : 'Sign In'}
         </NavLink>
+        <NavLink
+          className="shop-cart-phone"
+          to={loggedin ? '/cart' : '/login'}
+          onClick={shownavBar}
+        >
+          <ShoppingCart />
+        </NavLink>
+
         <NavLink to="/" onClick={shownavBar}>
           Home
         </NavLink>
-        <NavLink to="/shop" onClick={shownavBar}>
+        <NavLink to={loggedin ? '/shop' : '/login'} onClick={shownavBar}>
           Shop
         </NavLink>
-        <NavLink className="shop-cart-phone" to="/cart" onClick={shownavBar}>
-          <ShoppingCart />
-        </NavLink>
+
         <button className="nav-btn nav-btn-close" onClick={shownavBar}>
           <FaTimes />
         </button>
@@ -37,11 +45,15 @@ function Navbar() {
         <FaBars />
       </button>
       <div className="right">
-        <NavLink className="shop-cart" to="/cart" onClick={shownavBar}>
+        <NavLink
+          className="shop-cart"
+          to={loggedin ? '/cart' : '/login'}
+          onClick={shownavBar}
+        >
           <ShoppingCart />
         </NavLink>
         <NavLink className="sign-in" to="/login" onClick={shownavBar}>
-          Sign In
+          {loggedin ? account.accountname : 'Sign In'}
         </NavLink>
       </div>
     </header>

@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from 'react';
+import { createContext, useState } from 'react';
 import  product_card  from '../shop/product_card';
 
 export const ShopContext = createContext(null);

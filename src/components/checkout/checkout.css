@@ -1,0 +1,39 @@
+.checkout {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 2rem 0;
+}
+
+.order-div {
+  display: flex;
+  justify-content: center;
+}
+.order-info {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  width: 364px;
+  background-color: var(--textColor);
+  border-radius: 7px;
+  padding: 2rem;
+}
+
+.orderItem {
+  padding: 3px 0;
+  display: flex;
+  margin: 20px 0;
+  align-items: center;
+}
+
+.orderItem .description {
+  margin-left: 15px;
+  width: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+  .checkout {
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+  }
+}
