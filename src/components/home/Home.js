@@ -19,7 +19,7 @@ function Home() {
           <div className="home-hero-text">
             <h1>Welcome</h1>
             <p>Here is a selection of our greatest headphones</p>
-            <button onClick={() => navigate(loggedin ? '/shop' : '/login')}>
+            <button onClick={() => navigate( '/shop' )}>
               Explore
             </button>
           </div>
@@ -30,7 +30,7 @@ function Home() {
           <div className="left-div-text">
             <h1>Listen To Your Needs</h1>
             <p>Here is a selection of our greatest headphones</p>
-            <button onClick={() => navigate(loggedin ? '/shop' : '/login')}>
+            <button onClick={() => navigate( '/shop' )}>
               Shop Now
             </button>
           </div>

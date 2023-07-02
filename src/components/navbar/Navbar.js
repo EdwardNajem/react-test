@@ -24,7 +24,7 @@ function Navbar() {
         </NavLink>
         <NavLink
           className="shop-cart-phone"
-          to={loggedin ? '/cart' : '/login'}
+          to='/cart'
           onClick={shownavBar}
         >
           <ShoppingCart />
@@ -33,7 +33,7 @@ function Navbar() {
         <NavLink to="/" onClick={shownavBar}>
           Home
         </NavLink>
-        <NavLink to={loggedin ? '/shop' : '/login'} onClick={shownavBar}>
+        <NavLink to='/shop'  onClick={shownavBar}>
           Shop
         </NavLink>
 
@@ -47,7 +47,7 @@ function Navbar() {
       <div className="right">
         <NavLink
           className="shop-cart"
-          to={loggedin ? '/cart' : '/login'}
+          to= '/cart'
           onClick={shownavBar}
         >
           <ShoppingCart />

@@ -31,7 +31,7 @@ function NewsForm() {
                     name="email"
                     placeholder="Email address"
                   />
-                  <button className="submit-btn" type="submit">
+                  <button className="btn" type="submit">
                     Subscribe
                   </button>
                 </Form>

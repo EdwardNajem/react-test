@@ -1,11 +1,13 @@
 import { Form, Formik } from 'formik';
-import React from 'react';
+import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import * as Yup from 'yup';
 import FormikControl from './Formik/FormikControl';
 import './form/forms.css';
+import { ShopContext } from '../context/shop-context';
 
 function DeliveryForm() {
+  const { checkout } = useContext(ShopContext);
   const navigate = useNavigate();
   const options = [
     { key: 'Cash On Delivery', value: 'cashdeli' },
@@ -30,6 +32,7 @@ function DeliveryForm() {
 
   const onSubmit = (values) => {
     console.log('Form Data: ', values);
+    checkout();
     navigate('/');
   };
   return (

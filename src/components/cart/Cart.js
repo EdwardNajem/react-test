@@ -4,10 +4,12 @@ import { ShopContext } from '../context/shop-context';
 import Navbar from '../navbar/Navbar';
 import { product_card } from '../shop/product_card';
 import { CartItem } from './Cart-item';
+import { LoginContext } from '../context/login-context';
 
 import './cart.css';
 export default function Cart() {
-  const { cartItems, getTotalCartAmount, checkout } = useContext(ShopContext);
+  const {loggedin} = useContext(LoginContext);
+  const { cartItems, getTotalCartAmount } = useContext(ShopContext);
   const totalAmount = getTotalCartAmount();
 
   const navigate = useNavigate();
@@ -36,7 +38,7 @@ export default function Cart() {
             </button>
             <button
               onClick={() => {
-                navigate('/checkout');
+                navigate(loggedin ? '/checkout' : '/signin');
               }}
             >
               {' '}
