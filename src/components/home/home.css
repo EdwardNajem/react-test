@@ -1,6 +1,6 @@
 :root {
-  --mainColor: #29335c;
-  --mainColorLight: #47589b;
+  --mainColor: #509191;
+  --mainColorLight: #9cf6f6;
   --secondaryColor: #db2b39;
   --textColor: #eee;
 }
@@ -145,7 +145,7 @@
     width: 240px;
     height: 240px;
   }
-  
+
   .home-hero .home-hero-info .home-hero-text button {
     width: 100%;
     height: 40px;

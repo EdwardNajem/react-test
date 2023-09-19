@@ -5,8 +5,8 @@
 }
 
 :root {
-  --mainColor: #29335c;
-  --mainColorLight: #47589b;
+  --mainColor: #509191;
+  --mainColorLight: #9cf6f6;
   --secondaryColor: #db2b39;
   --textColor: #eee;
 }
@@ -64,7 +64,7 @@ nav a.active {
 }
 
 header a.active {
-  color: var(--secondaryColor)
+  color: var(--secondaryColor);
 }
 
 header .nav-btn {
@@ -158,7 +158,6 @@ header .shop-cart:hover {
     font-size: 1.5rem;
     visibility: visible;
     opacity: 1;
-    width: 70%;
   }
 
   nav .sign-in-phone:hover {

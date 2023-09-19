@@ -1,17 +1,16 @@
 :root {
-  --mainColor: #29335c;
-  --mainColorLight: #47589b;
+  --mainColor: #509191;
+  --mainColorLight: #9cf6f6;
   --secondaryColor: #db2b39;
   --textColor: #eee;
 }
-
 
 .section_padding {
   padding: 4rem 4rem;
 }
 
 .footer {
-  background-color: var(--mainColor)
+  background-color: var(--mainColor);
 }
 
 .sb_footer {

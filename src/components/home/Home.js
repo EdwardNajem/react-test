@@ -39,7 +39,6 @@ function Home() {
           <img src="2.png" alt="Headphones" />
         </div>
       </div>
-      <div className="right-div"></div>
       <Footer />
     </>
   );

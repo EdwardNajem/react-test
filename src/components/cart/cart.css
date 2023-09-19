@@ -1,10 +1,9 @@
 :root {
-  --mainColor: #29335c;
-  --mainColorLight: #47589b;
+  --mainColor: #509191;
+  --mainColorLight: #9cf6f6;
   --secondaryColor: #db2b39;
   --textColor: #eee;
 }
-
 .cart {
   display: flex;
   flex-direction: column;
@@ -37,7 +36,7 @@
 }
 
 .cartItem .description {
-   margin-left: 51px;
+  margin-left: 51px;
   width: 100%;
   font-size: 30px;
   color: var(--textColor);
@@ -85,11 +84,11 @@
 }
 
 .total {
-   color: var(--textColor);
-   font-weight: bold;
-   justify-content: center;
-   display: flex;
-   margin: 12px 0;
+  color: var(--textColor);
+  font-weight: bold;
+  justify-content: center;
+  display: flex;
+  margin: 12px 0;
 }
 
 @media only screen and (max-width: 768px) {
